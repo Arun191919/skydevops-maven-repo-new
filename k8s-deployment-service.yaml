@@ -16,10 +16,10 @@ spec:
         app: my-app
     spec:
       imagePullSecrets:
-      - name: my-registry-key
+      - name: arun-secret-key
       containers:
       - name: skydevops-container
-        image: vijaylokesh/my-tomcat:1
+        image: arun191919/my-tomcat1:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
