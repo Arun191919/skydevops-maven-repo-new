@@ -3,7 +3,7 @@ pipeline {
   label 'my-docker-slave'
   }
   stages {
-    stage('Cloning Git') {
+    stage('Checkout scm') {
       steps {
         checkout scm
       }
@@ -12,7 +12,7 @@ pipeline {
 	 stage('Deploying App to Kubernetes') {
       steps {
         script {
-          kubernetesDeploy(configs: "k8s-deployment-service.yaml", kubeconfigId: "kubernetes-deployment")
+          kubernetesDeploy(configs: "k8s-deployment-service.yaml", kubeconfigId: "k8s_cofiguration")
         }
       }
     }
